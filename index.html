@@ -1,9 +1,10 @@
 
+```html
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>ShopHub</title>
+      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopHub</title>
 
@@ -11,438 +12,307 @@
     <meta name="google-site-verification" content="CmwqUEkSjJ5gV7Gedz-TmmiFfcpYSqV45beElb54v4g" />
 
     <style>
-        /* =========================
-           GENERAL WEBSITE
-           ========================= */
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background: #eaeded;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
             color: #222;
         }
 
-
-        /* =========================
-           NAVIGATION BAR
-           ========================= */
-
-        .navbar {
-            background: #131921;
-            color: white;
+        /* HEADER */
+        header {
+            background: white;
+            padding: 18px 7%;
             display: flex;
             align-items: center;
-            padding: 15px 30px;
-            gap: 25px;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .logo {
             font-size: 28px;
             font-weight: bold;
-            color: #ff9900;
         }
 
-        .search {
-            flex: 1;
-            display: flex;
-        }
-
-        .search input {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-        }
-
-        .search button {
-            background: #febd69;
-            border: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .links a {
-            color: white;
+        nav a {
+            margin: 0 15px;
             text-decoration: none;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
+            color: #222;
         }
 
         .cart {
-            font-size: 25px;
-        }
-
-
-        /* =========================
-           HERO SECTION
-           ========================= */
-
-        .hero {
-            background: linear-gradient(90deg, #1b5fa7, #63c6ff);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 20px;
-        }
-
-
-        /* =========================
-           PRODUCTS
-           ========================= */
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 40px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .card h2 {
-            margin: 15px 0;
-        }
-
-        .price {
-            color: #B12704;
-            font-size: 25px;
             font-weight: bold;
         }
 
-        .buy {
-            margin-top: 15px;
-            width: 100%;
-            padding: 12px;
-            background: #ff9900;
-            border: none;
-            color: white;
+        /* HERO */
+        .hero {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #e9e9e9;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 10px;
+        }
+
+        .hero p {
             font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 14px 25px;
+            margin-top: 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            padding: 60px 7%;
+        }
+
+        .products h2 {
+            font-size: 32px;
+            text-align: center;
+        }
+
+        #search {
+            display: block;
+            width: 300px;
+            max-width: 90%;
+            margin: 20px auto 40px;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .add {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            background: #111;
+            color: white;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: 4px;
+            margin-top: 10px;
         }
 
-        .buy:hover {
-            background: #e68900;
+        /* ABOUT */
+        .about {
+            background: white;
+            padding: 70px 15%;
+            text-align: center;
         }
 
+        .about h2 {
+            font-size: 32px;
+        }
 
-        /* =========================
-           FOOTER
-           ========================= */
-
+        /* FOOTER */
         footer {
-            background: #131921;
+            background: #111;
             color: white;
             text-align: center;
-            padding: 30px;
-            margin-top: 20px;
+            padding: 40px;
         }
 
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 700px) {
-
-            .navbar {
-                flex-direction: column;
-            }
-
-            .search {
-                width: 100%;
-            }
-
-            .links {
-                flex-wrap: wrap;
-                justify-content: center;
+        @media (max-width: 800px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .product-grid {
+                grid-template-columns: 1fr;
             }
 
-            .products {
-                padding: 20px;
+            nav {
+                display: none;
             }
         }
     </style>
 </head>
 
-
 <body>
 
-    <!-- =========================
-         NAVIGATION
-         ========================= -->
+    <header>
+        <div class="logo">ShopHub</div>
 
-    <div class="navbar">
-
-        <div class="logo">
-            ShopHub
-        </div>
-
-        <!-- Search bar -->
-        <div class="search">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search products..."
-            >
-
-            <button onclick="searchProducts()">
-                🔍
-            </button>
-        </div>
-
-        <!-- Navigation links -->
-        <div class="links">
+        <nav>
             <a href="#">Home</a>
-            <a href="#products">Products</a>
-            <a href="#">Deals</a>
-            <a href="#">Orders</a>
-            <a href="#">Account</a>
-        </div>
+            <a href="#products">Shop</a>
+            <a href="#about">About</a>
+        </nav>
 
-        <!-- Shopping cart -->
         <div class="cart">
-            🛒 <span id="cartCount">0</span>
+            🛒 Cart: <span id="cart">0</span>
         </div>
+    </header>
 
-    </div>
-
-
-    <!-- =========================
-         HERO
-         ========================= -->
 
     <section class="hero">
-
-        <h1>
-            Find Amazing Deals Every Day
-        </h1>
-
-        <p>
-            Welcome to ShopHub
-        </p>
-
+        <div>
+            <h1>Find Your Next Fidget</h1>
+            <p>Fun, satisfying toys made for everyday use.</p>
+            <a href="#products" class="button">Shop Now</a>
+        </div>
     </section>
 
-
-    <!-- =========================
-         PRODUCTS
-         ========================= -->
 
     <section class="products" id="products">
 
-        <!-- Product 1 -->
-        <div class="card" data-name="Gaming Laptop">
+        <h2>Featured Fidgets</h2>
 
-            <img src="https://picsum.photos/400/300?random=1">
+        <input
+            type="text"
+            id="search"
+            placeholder="Search products..."
+            onkeyup="searchProducts()"
+        >
 
-            <h2>Gaming Laptop</h2>
+        <div class="product-grid" id="productGrid">
 
-            <div class="price">
-                $999.99
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80">
+                <h3>Galaxy Fidget</h3>
+                <p>Colorful and satisfying.</p>
+                <p class="price">$12.99</p>
+                <button class="add" onclick="addCart()">Add to Cart</button>
             </div>
 
-            <button
-                class="buy"
-                onclick="addToCart('Gaming Laptop')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- Product 2 -->
-        <div class="card" data-name="Wireless Headphones">
-
-            <img src="https://picsum.photos/400/300?random=2">
-
-            <h2>Wireless Headphones</h2>
-
-            <div class="price">
-                $10
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1602524205572-4c3f9d5c2e6a?auto=format&fit=crop&w=600&q=80">
+                <h3>Infinity Fidget</h3>
+                <p>Perfect for keeping your hands busy.</p>
+                <p class="price">$9.99</p>
+                <button class="add" onclick="addCart()">Add to Cart</button>
             </div>
 
-            <button
-                class="buy"
-                onclick="addToCart('Wireless Headphones')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- Product 3 -->
-        <div class="card" data-name="Smart Watch">
-
-            <img src="https://picsum.photos/400/300?random=3">
-
-            <h2>Smart Watch</h2>
-
-            <div class="price">
-                $15.99
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=600&q=80">
+                <h3>Magnetic Fidget</h3>
+                <p>Smooth and satisfying movement.</p>
+                <p class="price">$14.99</p>
+                <button class="add" onclick="addCart()">Add to Cart</button>
             </div>
 
-            <button
-                class="buy"
-                onclick="addToCart('Smart Watch')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- Product 4 -->
-        <div class="card" data-name="Mechanical Keyboard">
-
-            <img src="https://picsum.photos/400/300?random=4">
-
-            <h2>Mechanical Keyboard</h2>
-
-            <div class="price">
-                $9.99
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1594784055780-3c8f2f7e9c48?auto=format&fit=crop&w=600&q=80">
+                <h3>Clicker Fidget</h3>
+                <p>A satisfying click every time.</p>
+                <p class="price">$7.99</p>
+                <button class="add" onclick="addCart()">Add to Cart</button>
             </div>
 
-            <button
-                class="buy"
-                onclick="addToCart('Mechanical Keyboard')">
-                Add to Cart
-            </button>
-
         </div>
-
     </section>
 
 
-    <!-- =========================
-         FOOTER
-         ========================= -->
+    <section class="about" id="about">
+        <h2>About ShopHub</h2>
+        <p>
+            ShopHub is a simple online store for fun and satisfying
+            fidget toys. Find something you like and add it to your cart!
+        </p>
+    </section>
+
 
     <footer>
-
-        <p>
-            © 2026 ShopHub • All Rights Reserved
-        </p>
-
+        <p>© 2026 ShopHub</p>
+        <p>Made with HTML, CSS and JavaScript.</p>
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-         ========================= -->
-
     <script>
 
-        // Keeps track of how many items are in the cart
-        let cartCount = 0;
+        let cart = 0;
 
-
-        // Adds a product to the cart
-        function addToCart(productName) {
-
-            cartCount++;
-
-            document.getElementById("cartCount").textContent = cartCount;
-
-            alert(productName + " added to cart!");
-
+        function addCart() {
+            cart++;
+            document.getElementById("cart").innerText = cart;
         }
 
-
-        // Searches the products
         function searchProducts() {
 
-            let searchText =
-                document.getElementById("searchInput")
+            let search = document
+                .getElementById("search")
                 .value
                 .toLowerCase();
 
-            let products =
-                document.querySelectorAll(".card");
+            let products = document
+                .getElementsByClassName("product");
 
+            for (let i = 0; i < products.length; i++) {
 
-            products.forEach(function(product) {
-
-                let productName =
-                    product
-                    .getAttribute("data-name")
+                let name = products[i]
+                    .getElementsByTagName("h3")[0]
+                    .innerText
                     .toLowerCase();
 
-
-                if (productName.includes(searchText)) {
-
-                    product.style.display = "block";
-
+                if (name.includes(search)) {
+                    products[i].style.display = "block";
                 } else {
-
-                    product.style.display = "none";
-
+                    products[i].style.display = "none";
                 }
-
-            });
-
+            }
         }
-
-
-        // Allows searching by pressing Enter
-        document
-            .getElementById("searchInput")
-            .addEventListener("keypress", function(event) {
-
-                if (event.key === "Enter") {
-
-                    searchProducts();
-
-                }
-
-            });
 
     </script>
 
 </body>
-
 </html>
 ```
