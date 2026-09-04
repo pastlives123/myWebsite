@@ -1,15 +1,21 @@
-
 ```html
 <!DOCTYPE html>
-<html>
-<head>
-    <title>ShopHub</title>
-      <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopHub</title>
+<html lang="en">
 
-    <!-- Paste the Google verification tag right here -->
-    <meta name="google-site-verification" content="CmwqUEkSjJ5gV7Gedz-TmmiFfcpYSqV45beElb54v4g" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website title -->
+    <title>Twizlo - Fidget Toys</title>
+
+    <!-- Google Search description -->
+    <meta name="description"
+        content="Twizlo - Fun and satisfying fidget toys for everyday use.">
+
+    <!-- Google verification -->
+    <meta name="google-site-verification"
+        content="CmwqUEkSjJ5gV7Gedz-TmmiFfcpYSqV45beElb54v4g">
 
     <style>
         * {
@@ -24,6 +30,7 @@
         }
 
         /* HEADER */
+
         header {
             background: white;
             padding: 18px 7%;
@@ -39,12 +46,18 @@
         .logo {
             font-size: 28px;
             font-weight: bold;
+            letter-spacing: -1px;
         }
 
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: #222;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         .cart {
@@ -52,6 +65,7 @@
         }
 
         /* HERO */
+
         .hero {
             height: 500px;
             display: flex;
@@ -65,6 +79,7 @@
         .hero h1 {
             font-size: 60px;
             margin: 10px;
+            letter-spacing: -2px;
         }
 
         .hero p {
@@ -81,7 +96,12 @@
             border-radius: 4px;
         }
 
+        .button:hover {
+            background: #333;
+        }
+
         /* PRODUCTS */
+
         .products {
             padding: 60px 7%;
         }
@@ -93,13 +113,18 @@
 
         #search {
             display: block;
-            width: 300px;
+            width: 350px;
             max-width: 90%;
             margin: 20px auto 40px;
             padding: 13px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+            outline: none;
+        }
+
+        #search:focus {
+            border-color: #111;
         }
 
         .product-grid {
@@ -144,9 +169,15 @@
             cursor: pointer;
             border-radius: 4px;
             margin-top: 10px;
+            font-size: 15px;
+        }
+
+        .add:hover {
+            background: #333;
         }
 
         /* ABOUT */
+
         .about {
             background: white;
             padding: 70px 15%;
@@ -158,6 +189,7 @@
         }
 
         /* FOOTER */
+
         footer {
             background: #111;
             color: white;
@@ -165,7 +197,10 @@
             padding: 40px;
         }
 
+        /* TABLET */
+
         @media (max-width: 800px) {
+
             .product-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -175,7 +210,10 @@
             }
         }
 
+        /* PHONE */
+
         @media (max-width: 500px) {
+
             .product-grid {
                 grid-template-columns: 1fr;
             }
@@ -183,14 +221,28 @@
             nav {
                 display: none;
             }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
+    <!-- HEADER -->
+
     <header>
-        <div class="logo">ShopHub</div>
+
+        <div class="logo">
+            Twizlo
+        </div>
 
         <nav>
             <a href="#">Home</a>
@@ -199,23 +251,43 @@
         </nav>
 
         <div class="cart">
-            🛒 Cart: <span id="cart">0</span>
+            🛒 Cart:
+            <span id="cart">0</span>
         </div>
+
     </header>
 
 
+    <!-- HERO -->
+
     <section class="hero">
+
         <div>
-            <h1>Find Your Next Fidget</h1>
-            <p>Fun, satisfying toys made for everyday use.</p>
-            <a href="#products" class="button">Shop Now</a>
+
+            <h1>
+                Find Your Next Fidget
+            </h1>
+
+            <p>
+                Fun, satisfying toys made for everyday use.
+            </p>
+
+            <a href="#products" class="button">
+                Shop Now
+            </a>
+
         </div>
+
     </section>
 
 
+    <!-- PRODUCTS -->
+
     <section class="products" id="products">
 
-        <h2>Featured Fidgets</h2>
+        <h2>
+            Featured Fidgets
+        </h2>
 
         <input
             type="text"
@@ -224,95 +296,217 @@
             onkeyup="searchProducts()"
         >
 
-        <div class="product-grid" id="productGrid">
+
+        <div class="product-grid">
+
+
+            <!-- PRODUCT 1 -->
 
             <div class="product">
-                <img src="https://odellcreations.com/cdn/shop/files/bailsong-butterfly-knife-adult-fidget-804706.jpg?v=1757888269&width=1445">
-                <h3>Galaxy Fidget</h3>
-                <p>Colorful and satisfying.</p>
-                <p class="price">$12.99</p>
-                <button class="add" onclick="addCart()">Add to Cart</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80"
+                    alt="Galaxy fidget toy"
+                >
+
+                <h3>
+                    Galaxy Fidget
+                </h3>
+
+                <p>
+                    Colorful and satisfying.
+                </p>
+
+                <p class="price">
+                    $12.99
+                </p>
+
+                <button class="add" onclick="addCart()">
+                    Add to Cart
+                </button>
+
             </div>
 
-            <div class="product">
-                <img src="https://odellcreations.com/cdn/shop/files/bailsong-butterfly-knife-adult-fidget-804706.jpg?v=1757888269&width=1445">
-                <h3>Infinity Fidget</h3>
-                <p>Perfect for keeping your hands busy.</p>
-                <p class="price">$10.99</p>
-                <button class="add" onclick="addCart()">Add to Cart</button>
-            </div>
+
+            <!-- PRODUCT 2 -->
 
             <div class="product">
-                <img src="https://odellcreations.com/cdn/shop/files/bailsong-butterfly-knife-adult-fidget-804706.jpg?v=1757888269&width=1445">
-                <h3>Plastic Butterfly</h3>
-                <p>Smooth and satisfying movement.</p>
-                <p class="price">$7.99</p>
-                <button class="add" onclick="addCart()">Add to Cart</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=600&q=80"
+                    alt="Infinity fidget toy"
+                >
+
+                <h3>
+                    Infinity Fidget
+                </h3>
+
+                <p>
+                    Perfect for keeping your hands busy.
+                </p>
+
+                <p class="price">
+                    $10.99
+                </p>
+
+                <button class="add" onclick="addCart()">
+                    Add to Cart
+                </button>
+
             </div>
 
+
+            <!-- PRODUCT 3 -->
+
             <div class="product">
-                <img src="https://odellcreations.com/cdn/shop/files/bailsong-butterfly-knife-adult-fidget-804706.jpg?v=1757888269&width=1445">
-                <h3>Butterfly Fidget Carrot</h3>
-                <p>A satisfying click every time.</p>
-                <p class="price">$5.99</p>
-                <button class="add" onclick="addCart()">Add to Cart</button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1594784055780-3c8f2f7e9c48?auto=format&fit=crop&w=600&q=80"
+                    alt="Magnetic fidget toy"
+                >
+
+                <h3>
+                    Magnetic Fidget
+                </h3>
+
+                <p>
+                    Smooth and satisfying movement.
+                </p>
+
+                <p class="price">
+                    $7.99
+                </p>
+
+                <button class="add" onclick="addCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1602524205572-4c3f9d5c2e6a?auto=format&fit=crop&w=600&q=80"
+                    alt="Clicker fidget toy"
+                >
+
+                <h3>
+                    Clicker Fidget
+                </h3>
+
+                <p>
+                    A satisfying click every time.
+                </p>
+
+                <p class="price">
+                    $5.99
+                </p>
+
+                <button class="add" onclick="addCart()">
+                    Add to Cart
+                </button>
+
             </div>
 
         </div>
+
     </section>
 
+
+    <!-- ABOUT -->
 
     <section class="about" id="about">
-        <h2>About ShopHub</h2>
+
+        <h2>
+            About Twizlo
+        </h2>
+
         <p>
-            ShopHub is a simple online store for fun and satisfying
+            Twizlo is a simple online store for fun and satisfying
             fidget toys. Find something you like and add it to your cart!
         </p>
+
     </section>
 
 
+    <!-- FOOTER -->
+
     <footer>
-        <p>© 2026 ShopHub</p>
-        <p>Made with HTML, CSS and JavaScript.</p>
+
+        <p>
+            © 2026 Twizlo
+        </p>
+
+        <p>
+            Made with HTML, CSS and JavaScript.
+        </p>
+
     </footer>
 
+
+    <!-- JAVASCRIPT -->
 
     <script>
 
         let cart = 0;
 
+
+        // ADD TO CART
+
         function addCart() {
+
             cart++;
+
             document.getElementById("cart").innerText = cart;
+
         }
+
+
+        // SEARCH PRODUCTS
 
         function searchProducts() {
 
-            let search = document
+            let search =
+                document
                 .getElementById("search")
                 .value
                 .toLowerCase();
 
-            let products = document
+
+            let products =
+                document
                 .getElementsByClassName("product");
+
 
             for (let i = 0; i < products.length; i++) {
 
-                let name = products[i]
+                let name =
+                    products[i]
                     .getElementsByTagName("h3")[0]
                     .innerText
                     .toLowerCase();
 
+
                 if (name.includes(search)) {
+
                     products[i].style.display = "block";
+
                 } else {
+
                     products[i].style.display = "none";
+
                 }
+
             }
+
         }
 
     </script>
 
 </body>
+
 </html>
 ```
